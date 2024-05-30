@@ -7,9 +7,11 @@ import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 
 import com.big.bang.entities.Category;
+import com.big.bang.exception.ResourceNotFoundException;
 import com.big.bang.playloads.CategoryDto;
 import com.big.bang.repositories.CategoryRepo;
 import com.big.bang.service.CategoryService;
+
 
 public class CategoryServiceImpl  implements CategoryService {
 
@@ -48,6 +50,14 @@ public class CategoryServiceImpl  implements CategoryService {
 		return catDtos;
 	
 	
+	}
+	
+	@Override
+	public CategoryDto getCategory(Integer categoryId) {
+		Category cat = this.categoryRepo.findById(categoryId)
+				.orElseThrow(() -> new ResourceNotFoundException("Category", "category id", categoryId));
+
+		return this.modelMapper.map(cat, CategoryDto.class);
 	}
    
 }

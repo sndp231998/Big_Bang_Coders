@@ -22,7 +22,7 @@ import lombok.Setter;
 public class Category {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Integer categoryid;
+    private Integer categoryId;
     private String name;
     private String description;
     private String categoryType; // "PRODUCT" or "WASTE"

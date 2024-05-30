@@ -14,7 +14,7 @@ import lombok.NoArgsConstructor;
 @NoArgsConstructor
 public class Waste {
 
-	private int wasteid;
+	private int wasteId;
 	
 	private String name;
 	private String type;

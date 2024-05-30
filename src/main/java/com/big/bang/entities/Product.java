@@ -9,10 +9,11 @@ import jakarta.persistence.Id;
 import jakarta.persistence.JoinColumn;
 import jakarta.persistence.ManyToOne;
 import lombok.Data;
+import lombok.NoArgsConstructor;
 
 @Entity
 @Data
-
+@NoArgsConstructor
 public class Product {
 
 	@Id
@@ -21,7 +22,7 @@ public class Product {
     private String name;
    private String description;
     private Double price;
-    //private Integer stock;
+    private Integer quantity;
     private Date addedDate;
     @ManyToOne
     @JoinColumn(name = "categoryId")

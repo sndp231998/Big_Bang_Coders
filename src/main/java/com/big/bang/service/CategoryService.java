@@ -24,7 +24,8 @@ public interface CategoryService {
  	List<CategoryDto> getCategories();
     
     
-    
+	// get by id
+	CategoryDto getCategory(Integer categoryId);
     
     
     
@@ -35,12 +36,9 @@ public interface CategoryService {
 // 	// delete
 // 	void deleteCategory(Integer categoryId);
 //
-// 	// get
-// 	CategoryDto getCategory(Integer categoryId);
+ 
 //
-// 	// get All
-//
-// 	List<CategoryDto> getCategories();
+
 
 }
 
