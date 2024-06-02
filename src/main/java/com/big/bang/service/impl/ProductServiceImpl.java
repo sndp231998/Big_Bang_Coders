@@ -6,6 +6,7 @@ import java.util.stream.Collectors;
 
 import org.modelmapper.ModelMapper;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.stereotype.Service;
 
 import com.big.bang.entities.Category;
 import com.big.bang.entities.Product;
@@ -19,7 +20,7 @@ import com.big.bang.repositories.ProductRepo;
 import com.big.bang.repositories.UserRepo;
 
 import com.big.bang.service.ProductService;
-
+@Service
 public class ProductServiceImpl implements ProductService {
 
 	 @Autowired

@@ -11,7 +11,7 @@ import com.big.bang.entities.User;
 
 
 public interface CategoryRepo extends JpaRepository <Category, Integer> {
-    List<Category> findByCategoryType(String categoryType);
+//    List<Category> findByCategoryType(String categoryType);
     
     
     

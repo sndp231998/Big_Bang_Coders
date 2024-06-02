@@ -23,11 +23,9 @@ public class ProductDto {
     private Double price;
     private Integer quantity;
     private Date addedDate;
-//    @ManyToOne
-//    @JoinColumn(name = "categoryId")
-    private Category category;
-    
-//    @ManyToOne
-//    @JoinColumn(name = "userId")
-    private User user;
+
+    private CategoryDto category;
+//    
+
+   private UserDto user;
 }

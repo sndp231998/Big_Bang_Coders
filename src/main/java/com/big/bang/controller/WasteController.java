@@ -136,8 +136,8 @@ public class WasteController {
 
 	    }
 	    //getall waste
-	 // GET - user get
-	 		@GetMapping("/")
+	 // GET - 
+	 		@GetMapping("/wastes/")
 	 		public ResponseEntity<List<WasteDto>> getAllWastes() {
 	 			return ResponseEntity.ok(this.wasteService.getAllWastes());
 	 		}

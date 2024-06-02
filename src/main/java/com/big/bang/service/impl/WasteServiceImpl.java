@@ -18,10 +18,6 @@ import com.big.bang.repositories.UserRepo;
 import com.big.bang.repositories.WasteRepo;
 import com.big.bang.service.WasteService;
 
-
-
-
-
 @Service
 public class WasteServiceImpl implements WasteService{
     @Autowired

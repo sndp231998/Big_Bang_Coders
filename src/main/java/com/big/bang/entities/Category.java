@@ -3,7 +3,9 @@ package com.big.bang.entities;
 import java.util.ArrayList;
 import java.util.List;
 
+
 import jakarta.persistence.CascadeType;
+import jakarta.persistence.Column;
 import jakarta.persistence.Entity;
 import jakarta.persistence.FetchType;
 import jakarta.persistence.GeneratedValue;
@@ -23,9 +25,13 @@ public class Category {
     @Id 
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer categoryId;
-    private String name;
-    private String description;
-    private String categoryType; // "PRODUCT" or "WASTE"
+    
+	@Column(name="title",length = 100,nullable = false)
+	private String categoryTitle;
+	
+	@Column(name="description")
+	private String categoryDescription;
+   // private String categoryType; // "PRODUCT" or "WASTE"
 
     
     @OneToMany(mappedBy = "category",cascade = CascadeType.ALL,fetch = FetchType.LAZY)

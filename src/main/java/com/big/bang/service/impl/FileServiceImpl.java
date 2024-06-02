@@ -9,12 +9,13 @@ import java.nio.file.Files;
 import java.nio.file.Paths;
 import java.util.UUID;
 
+import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
 import com.big.bang.service.FileService;
 
 
-
+@Service
 public class FileServiceImpl implements FileService {
 
 	@Override

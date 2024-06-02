@@ -1,3 +1,4 @@
+
 package com.big.bang.entities;
 
 import java.util.Date;
@@ -29,7 +30,7 @@ public class Product {
     private Category category;
     
     @ManyToOne
-    @JoinColumn(name = "userId")
+    @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
     // getters and setters
 }

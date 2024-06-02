@@ -15,32 +15,20 @@ import lombok.NoArgsConstructor;
 @Entity
 @Data
 @NoArgsConstructor
-public class Waste {
+public class Salesp {
 	@Id
-	@GeneratedValue(strategy = GenerationType.IDENTITY)
-	private int wasteId;
-	
-	private String name;
-	private String type;
-	private String location;
-	private String unit;
-	private String qty;
-	
-	private String imageName;
-
-	private Date addedDate;
-	
-	@ManyToOne
-    @JoinColumn(name = "categoryId")
-    private Category category;
-
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    private Integer salesId;
+    
+    @ManyToOne
+    @JoinColumn(name = "productId", nullable = false)
+    private Product product;
+    
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
     
-    
-//--------------------
- 
-
-	
+    private Date addedDate; 
+	 
+	 
 }
