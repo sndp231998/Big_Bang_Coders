@@ -24,7 +24,7 @@ public class Waste {
 	private String type;
 	private String location;
 	private String unit;
-	private String qty;
+	private String quantity;
 	
 	private String imageName;
 
@@ -37,6 +37,8 @@ public class Waste {
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
+    
+    
     
     
 //--------------------

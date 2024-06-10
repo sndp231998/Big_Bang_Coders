@@ -28,6 +28,8 @@ public class Salesp {
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
     
+    private Integer quantity;
+    
     private Date addedDate; 
 	 
 	 

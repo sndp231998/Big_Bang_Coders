@@ -40,11 +40,21 @@ public class SalesServiceImpl implements SalesService {
         User user = userRepo.findById(userId)
                 .orElseThrow(() -> new RuntimeException("User not found"));
 
+     // Check if the product quantity is sufficient
+        int salesQuantity= salesDto.getQuantity();
+        if(product.getQuantity()<salesQuantity) {
+        	throw new RuntimeException("Insufficient product quantity");
+        }
+        
+        //Decrease the product quantity
+        product.setQuantity(product.getQuantity()-salesQuantity);
+        productRepo.save(product);
+        
         Salesp salesProduct = new Salesp();
         salesProduct.setProduct(product);
         salesProduct.setUser(user);
-        salesProduct.setAddedDate(new java.sql.Date(new Date().getTime()));
-
+        salesProduct.setQuantity(salesQuantity);
+       
         Salesp newSales = salesPRepo.save(salesProduct);
 
         return modelMapper.map(newSales, SalespDto.class);

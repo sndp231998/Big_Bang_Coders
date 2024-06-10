@@ -18,4 +18,5 @@ public class SalespDto {
     private String userName;
     private String userEmail;
     private Date addedDate;
+    private Integer quantity;
 }

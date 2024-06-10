@@ -61,9 +61,11 @@ public class WasteServiceImpl implements WasteService{
 	        waste.setLocation(wasteDto.getLocation());
 	        waste.setName(wasteDto.getName());
 	        
-	        waste.setQty(wasteDto.getQty());
+	        waste.setQuantity(wasteDto.getQuantity());
 	        waste.setType(waste.getType());
 	        waste.setUnit(waste.getUnit());
+	        waste.setLocation(waste.getLocation());
+	        
 	        
 	        waste.setImageName(wasteDto.getImageName());
 	        waste.setCategory(category);

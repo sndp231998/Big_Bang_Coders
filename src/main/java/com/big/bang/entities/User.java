@@ -47,7 +47,7 @@ public class User {
 
 	private String about;
 	
-
+	private Integer coins = 0;
 //	
 	
 //	@ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.EAGER)

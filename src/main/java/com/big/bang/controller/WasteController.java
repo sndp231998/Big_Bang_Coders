@@ -135,6 +135,7 @@ public class WasteController {
 	        StreamUtils.copy(resource,response.getOutputStream())   ;
 
 	    }
+	    
 	    //getall waste
 	 // GET - 
 	 		@GetMapping("/wastes/")

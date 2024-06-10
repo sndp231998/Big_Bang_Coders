@@ -33,5 +33,7 @@ public class Product {
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
     // getters and setters
+    
+    
 }
 
