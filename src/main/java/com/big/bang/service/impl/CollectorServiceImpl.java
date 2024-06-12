@@ -40,18 +40,39 @@ public class CollectorServiceImpl implements CollectorService {
         User user = this.userRepo.findById(userId)
                 .orElseThrow(() -> new ResourceNotFoundException("User", "User id", userId));
 
+        User wasteowner=waste.getUser();
+        if(wasteowner==null) {
+        	throw new ResourceNotFoundException("User","User id", wasteId);
+        }
+        
+        // Null check for quantity field
+        if (collectorDto.getQuantity() == null || collectorDto.getQuantity() <= 0) {
+            throw new IllegalArgumentException("Quantity must be provided and greater than 0");
+        }
+        
+        
         Collector collector = this.modelMapper.map(collectorDto, Collector.class);
         collector.setUser(user);
         collector.setWaste(waste);
         collector.setCollectDate(new Date());
-        // Ensure addedDate is set if needed
-
+        
+        // Calculate coins based on the quantity of waste
+        int earnCoins = calculateCoinsForWaste (collectorDto.getQuantity());
+        wasteowner.setCoins(wasteowner.getCoins() + earnCoins);
+        this.userRepo.save(wasteowner);
+        
         Collector newCollect = this.collectorRepo.save(collector);
         CollectorDto newCollectorDto = this.modelMapper.map(newCollect, CollectorDto.class);
         mapAdditionalDetails(newCollect, newCollectorDto);
 
         return newCollectorDto;
     }
+    
+    private int calculateCoinsForWaste(Integer quantity) {
+        // 1 kg of waste = 5 coins
+        return quantity * 5;
+    }
+    
 
     @Override
     public CollectorDto getCollectorById(Integer collectorId) {

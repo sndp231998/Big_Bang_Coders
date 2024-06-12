@@ -20,7 +20,7 @@ public class WasteDto {
 	private String type;
 	private String location;
 	private String unit;
-	private String quantity;
+	private Integer quantity;
 	
 private String imageName;
 	

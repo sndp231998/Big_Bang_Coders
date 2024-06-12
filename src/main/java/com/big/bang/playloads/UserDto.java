@@ -28,4 +28,6 @@ public class UserDto {
 	@NotEmpty
 	private String about;
 	
+	private Double coins = 0.0;
+	
 }

@@ -28,6 +28,11 @@ public class Salesp {
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
     
+    
+    @ManyToOne
+    @JoinColumn(name = "waste_id") // Assuming waste_id is the foreign key column in the sales table
+    private Waste waste;
+    
     private Integer quantity;
     
     private Date addedDate; 

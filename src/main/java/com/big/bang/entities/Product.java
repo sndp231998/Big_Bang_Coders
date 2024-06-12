@@ -32,6 +32,9 @@ public class Product {
     @ManyToOne
     @JoinColumn(name = "user_id", referencedColumnName = "user_id")
     private User user;
+    
+    
+
     // getters and setters
     
     

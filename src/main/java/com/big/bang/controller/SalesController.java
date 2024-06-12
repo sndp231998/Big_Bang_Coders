@@ -18,11 +18,13 @@ public class SalesController {
     private SalesService salesService;
 
     // Create a new sale
-    @PostMapping("/products/{productId}/users/{userId}")
+    @PostMapping("/products/{productId}/users/{userId}/wastes/{wasteId}")
     public ResponseEntity<SalespDto> createSale(@RequestBody SalespDto salesDto, 
                                                 @PathVariable Integer productId, 
-                                                @PathVariable Integer userId) {
-        SalespDto createdSale = salesService.createSales(salesDto, productId, userId);
+                                                @PathVariable Integer userId,
+                                                @PathVariable Integer wasteId)
+                                                {
+        SalespDto createdSale = salesService.createSales(salesDto, productId, userId,wasteId);
         return new ResponseEntity<>(createdSale, HttpStatus.CREATED);
     }
 

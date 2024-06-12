@@ -9,7 +9,7 @@ import com.big.bang.playloads.SalespDto;
 
 public interface SalesService {
 
-	SalespDto createSales(SalespDto salesDto, Integer productId, Integer userId);
+	SalespDto createSales(SalespDto salesDto, Integer productId, Integer userId, Integer wasteId);
 
     SalespDto getSalesById(Integer salesId);
 

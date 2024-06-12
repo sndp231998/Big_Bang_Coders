@@ -5,13 +5,17 @@ import java.util.Date;
 import com.big.bang.entities.User;
 import com.big.bang.entities.Waste;
 
+import jakarta.persistence.GeneratedValue;
+import jakarta.persistence.GenerationType;
+import jakarta.persistence.Id;
 import lombok.Data;
 import lombok.NoArgsConstructor;
 
 @Data
 @NoArgsConstructor
 public class CollectorDto {
-
+	@Id
+	@GeneratedValue(strategy = GenerationType.AUTO)
 	private int collectorId;
 	
 	 private Integer wasteId;
@@ -22,7 +26,7 @@ public class CollectorDto {
 	   
 	    private Date addedDate;
 	    private Date collectDate; 
-	    private String quantity;
+	    private Integer quantity;
 	   
 	    private String userEmail;
 	    
